@@ -1,0 +1,10 @@
+{% extends "base" %}
+
+{% block content %}
+
+<div class="container text-center" style="padding-top: 30vh; min-height: 70vh">
+    <h1>OOPS</h1>
+    <p>Page not found, return to <a href="/">home</a>?</p>
+</div>
+
+{% endblock content %}
