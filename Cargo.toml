@@ -1,11 +1,11 @@
 [package]
 name = "lyzde_rust"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["tonny"]
 edition = "2018"
 
 [dependencies]
-rocket = "0.4.0"
+rocket = "0.4.1"
 serde = "1.0"
 serde_json = "1.0"
 serde_derive = "1.0"
@@ -17,4 +17,4 @@ comrak = "0.6"
 [dependencies.rocket_contrib]
 version = "0.4.0"
 default-features = false
-features = ["serve", "json", "handlebars_templates", "tera_templates"]
+features = ["serve", "json", "tera_templates"]

@@ -5,7 +5,7 @@
 <div class="container">
   <div class="mt-4" id="blog-list-container">
   {% for article in content.Blog %}
-  <a class="card post-item mt-4" href="/post?id={{article.id}}">
+  <a class="card post-item mt-4" href="/article?id={{article.id}}">
       <div class="card-body">
         <h5 class="card-title">{{article.title}}</h5>
         <h6 class="card-subtitle mb-2 text-muted">{{article.datetime}}</h6>

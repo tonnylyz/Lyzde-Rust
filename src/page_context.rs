@@ -4,7 +4,7 @@ use chrono::prelude::*;
 pub enum PageContent {
     Nil,
     Blog(Vec<BlogListItem>),
-    Post(PostItem),
+    Article(ArticleItem),
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -24,7 +24,7 @@ pub struct BlogListItem {
 }
 
 #[derive(Debug, PartialEq, Eq, Serialize, Deserialize)]
-pub struct PostItem {
+pub struct ArticleItem {
     pub id: u32,
     pub title: String,
     pub description: String,
