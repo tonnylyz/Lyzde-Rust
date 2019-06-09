@@ -37,8 +37,8 @@ fn main() {
     println!("Static directory: {}", static_dir);
     println!("Listen port: {}", config::port());
 
-    let config = Config::build(Environment::Development)
-        .address("0.0.0.0")
+    let config = Config::build(Environment::Production)
+        .address("127.0.0.1")
         .port(config::port())
         .unwrap();
 
