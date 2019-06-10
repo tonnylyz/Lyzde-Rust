@@ -12,6 +12,7 @@ extern crate chrono;
 
 mod page;
 mod page_context;
+mod controller;
 mod config;
 
 use std::env;
@@ -44,7 +45,7 @@ fn main() {
 
     rocket::custom(config)
         .mount("/static", StaticFiles::from(static_dir))
-        .mount("/", page::routes())
+        .mount("/", [page::routes(), controller::routes()].concat())
         .attach(Template::fairing())
         .register(catchers![not_found])
         .launch();
