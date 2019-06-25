@@ -1,4 +1,4 @@
-#![feature(proc_macro_hygiene, decl_macro)]
+#![feature(proc_macro_hygiene, decl_macro, try_trait)]
 #[macro_use]
 extern crate rocket;
 #[macro_use]
@@ -14,6 +14,8 @@ mod page;
 mod page_context;
 mod controller;
 mod config;
+mod db_helper;
+mod website_helper;
 
 use std::env;
 
@@ -21,8 +23,8 @@ use rocket::config::{Config, Environment};
 use rocket_contrib::serve::StaticFiles;
 use rocket_contrib::templates::Template;
 
+/*
 use crate::page_context::{PageContext, PageContent};
-
 #[catch(404)]
 fn not_found() -> Template {
     Template::render("error", &PageContext {
@@ -30,7 +32,7 @@ fn not_found() -> Template {
         stylesheet: "error.css".to_string(),
         content: PageContent::Nil,
     })
-}
+}*/
 
 fn main() {
     println!("MySQL connection string: {}", config::conn());
@@ -47,6 +49,6 @@ fn main() {
         .mount("/static", StaticFiles::from(static_dir))
         .mount("/", [page::routes(), controller::routes()].concat())
         .attach(Template::fairing())
-        .register(catchers![not_found])
+        //.register(catchers![not_found])
         .launch();
 }

@@ -3,6 +3,7 @@ use chrono::prelude::*;
 #[derive(Debug, Serialize, Deserialize)]
 pub enum PageContent {
     Nil,
+    Index(IndexItem),
     Blog(Vec<BlogListItem>),
     Article(ArticleItem),
 }
@@ -12,6 +13,25 @@ pub struct PageContext {
     pub title: String,
     pub stylesheet: String,
     pub content: PageContent,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct LinkItem {
+    pub title: String,
+    pub url: String,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct IndexSkillItem {
+    pub title: String,
+    pub description: String,
+    pub keywords: Vec<String>,
+    pub links: Vec<LinkItem>,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct IndexItem {
+    pub introduction: String,
 }
 
 #[derive(Debug, PartialEq, Eq, Serialize, Deserialize)]
