@@ -4,7 +4,7 @@ use rocket_contrib::templates::Template;
 #[get("/")]
 pub fn index() -> Template {
     let index = IndexItem {
-        introduction: crate::website_helper::fetch_kv("introduction", None),
+        introduction: "".to_string(),
     };
     Template::render("index", &PageContext {
         title: "Lyzde".to_string(),

@@ -1,42 +1,24 @@
 #![feature(proc_macro_hygiene, decl_macro, try_trait)]
-#[macro_use]
-extern crate rocket;
-#[macro_use]
-extern crate serde_derive;
-#[macro_use]
-extern crate mysql;
-#[macro_use]
-extern crate lazy_static;
+
+#[macro_use] extern crate rocket;
+#[macro_use] extern crate serde_derive;
+#[macro_use] extern crate lazy_static;
 
 extern crate chrono;
+extern crate postgres;
 
 mod page;
-mod page_context;
 mod controller;
+mod page_context;
 mod config;
-mod db_helper;
-mod website_helper;
-
-use std::env;
 
 use rocket::config::{Config, Environment};
 use rocket_contrib::serve::StaticFiles;
 use rocket_contrib::templates::Template;
 
-/*
-use crate::page_context::{PageContext, PageContent};
-#[catch(404)]
-fn not_found() -> Template {
-    Template::render("error", &PageContext {
-        title: "Lyzde".to_string(),
-        stylesheet: "error.css".to_string(),
-        content: PageContent::Nil,
-    })
-}*/
-
 fn main() {
-    println!("MySQL connection string: {}", config::conn());
-    let static_dir = format!("{}/static", env::current_dir().unwrap().display());
+    println!("Database connection string: {}", config::conn());
+    let static_dir = format!("{}/static", std::env::current_dir().unwrap().display());
     println!("Static directory: {}", static_dir);
     println!("Listen port: {}", config::port());
 
@@ -49,6 +31,5 @@ fn main() {
         .mount("/static", StaticFiles::from(static_dir))
         .mount("/", [page::routes(), controller::routes()].concat())
         .attach(Template::fairing())
-        //.register(catchers![not_found])
         .launch();
 }

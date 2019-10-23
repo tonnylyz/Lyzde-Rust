@@ -36,19 +36,19 @@ pub struct IndexItem {
 
 #[derive(Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub struct BlogListItem {
-    pub id: u32,
+    pub id: i32,
     pub title: String,
     pub description: String,
-    pub datetime: NaiveDateTime,
+    pub datetime: DateTime<Local>,
     pub tag: Vec<String>,
 }
 
 #[derive(Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub struct ArticleItem {
-    pub id: u32,
+    pub id: i32,
     pub title: String,
     pub description: String,
-    pub datetime: NaiveDateTime,
+    pub datetime: DateTime<Local>,
     pub tag: Vec<String>,
     pub content: String,
 }
