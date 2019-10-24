@@ -1,31 +1,95 @@
 {% extends "base" %}
 
 {% block content %}
-
 <div class="container index-main">
-  <h1 class="display-4">TONNY</h1>
-  <h4>Yuanzhi LIANG</h4>
-  <p>A creative designer and programmer.</p>
-  <div class="index-menu">
-    <a href="/resume-yuanzhi-liang.pdf" target="_blank">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
-      </svg><br />Resume</a>
-      <a href="http://github.com/tonnylyz/" target="_blank">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-      </svg><br />Github</a>
-      <a href="blog">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-      </svg><br />Blog</a>
-  </div>
-</div>
-<div class="index-intro">
-  <h1 id="me">About Me</h1>
-  <p>
-    {{content.Index.introduction}}
+<div class="index-side">
+  <div class="full-name" data-key="name">Yuanzhi LIANG</div>
+  <p data-key="school">
+    School of Computer Science and Engineering of
   </p>
+  <div class="section-title uni-name" data-key="university">Beihang University</div>
+  <p data_key="major">M.E. Software Engineering</p>
+
+
+  <div class="section-title">Connect</div>
+  <dl>
+    <dt>E-mail:</dt>
+    <dd data-key="email">lyztonny#gmail.com</dd>
+  </dl>
+  <dl>
+    <dt>Website:</dt>
+    <dd data-key="link_website"><a href="https://www.lyzde.com">www.lyzde.com</a></dd>
+  </dl>
+  <dl>
+    <dt>Github:</dt>
+    <dd data-key="link_github"><a href="https://github.com/tonnylyz">github.com/tonnylyz</a></dd>
+  </dl>
+
+  <div class="section-title">Education</div>
+  <div class="education-title">Beihang University (master)</div>
+  <p class="education-major">M.E. Software Engineering</p>
+  <p class="education-time">Sept 2019 - Now</p>
+  <div class="education-title">Beihang University (bachelor)</div>
+  <p class="education-major">B.E. Computer Science and Technology GPA(3.7/4.0)</p>
+  <p class="education-time">Sept 2015 - July 2019</p>
+  <div class="education-title">Shenzhen Middle School (high school)</div>
+  <p class="education-time">Sept 2012 - July 2015</p>
+
+  <div class="section-title">Interest</div>
+  <p>Operating System / Kernel</p>
+  <p>Software Engineering</p>
+  <p>Embedded System</p>
+  <p>Computer Architecture</p>
+
+  <div class="section-title">Skills</div>
+  <div class="skill-title">Programming</div>
+  <p>Rust | C | ...</p>
+  <div class="skill-title">Hardware System Design</div>
+  <p>Verilog HDL</p>
+  <div class="skill-title">Kernel port</div>
+  <p>Aarch64 | ARMv7 | C66x DSP</p>
 </div>
+<div class="index-content">
+  <div class="section-title">Brief</div>
+  <p class="text">
+  Yuanzhi Liang (Tonny Leung) is a graduate student at Beihang University majored in Software Engineering. He acquired a bachelor degree of Computer Science at Beihang University in 2019, and he also graduated from Shenzhen Middle School in 2015. He works at Laboratory of Operating System led by Assoc. Prof. Lei Wang. His research interests focus on Operating System, Computer Architecture and Programming Language.
+  </p>
+  <div class="section-title">Coursework</div>
+  <p class="text">C Language Programming (100) | Computer Structure (92/Lab 100) | Operating System (87/Lab 89) |
+     Database (97) | Compiler (88) | Computer Graphics (MOOC: UC San Diego) | Programming Language (MOOC: Washington University)
+  </p>
+  <div class="section-title">Experiences</div>
+
+  <div class="experience-title">Research Assistant @ Operating System Lab</div>
+  <div class="experience-time">July 2018 - None</div>
+  <ul class="experience-list">
+    <li>Working in Operating System Laboratory led by Assoc. Prof. Lei Wang.</li>
+    <li>Doing research regarding embedded OS, safety-critical system and deterministic realtime system.</li>
+  </ul>
+
+  <div class="experience-title">Teacher Assistant @ Operating System Course</div>
+  <div class="experience-time">Feb 2018 - July 2018</div>
+  <ul class="experience-list">
+    <li>Working in OS TA team, a student teaching assistant adviser team consists of several outstanding
+        undergraduates.</li>
+    <li>Designing challenge tasks for student to implement a small Operating System kernel running on
+        Raspberry Pi.</li>
+  </ul>
+
+  <div class="section-title">Bachelor Thesis</div>
+  <div class="thesis-title">Design and Implementation of Partitioning Scheduling Mechanism for Multi-core DSP</div>
+  <p><strong>Keyword: </strong>Operating System, partition, multi-core, DSP, ARINC 653</p>
+
+  <div class="section-title">Side Projects</div>
+  <ul class="project-list">
+      <li>This website powered by Rust: github.com/Xuehuo/Lyzde-Rust</li>
+      <li>Raspberry Pi 3 bare-metal Operating System: github.com/tonnylyz/RPI-EVO</li>
+      <li>Collaborative website for SAA: github.com/Xuehuo/SAA-Online</li>
+  </ul>
+
+</div>
+
+
+</div>
+<div style="clear:both"></div>
 {% endblock content %}
